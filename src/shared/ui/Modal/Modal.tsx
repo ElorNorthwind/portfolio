@@ -26,10 +26,13 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
     }
   }, [onClose]);
 
-  const contentClickHandler = (e: React.MouseEvent): void => {
-    // e.stopPropagation();
-  };
+  //     const contentClickHandler = (e: React.MouseEvent): void => {
+  //   e.stopPropagation();
+  //     };
 
+  const contentClickHandler = (): void => {
+    //   e.stopPropagation();
+  };
   const onKeydown = useCallback(
     (e: KeyboardEvent): void => {
       if (e.key === "Escape") {
