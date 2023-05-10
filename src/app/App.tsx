@@ -5,6 +5,8 @@ import Section4 from "@/pages/Section4/Section4";
 import Section5 from "@/pages/Section5/Section5";
 import Section6 from "@/pages/Section6/Section6";
 import Section7 from "@/pages/Section7/Section7";
+import Section8 from "@/pages/Section8/Section8";
+import Section9 from "@/pages/Section9/Section9";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Section5 />
       <Section6 />
       <Section7 />
+      <Section8 />
+      <Section9 />
     </div>
   );
 }

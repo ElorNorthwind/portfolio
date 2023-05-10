@@ -10,7 +10,7 @@ export default function Section5() {
         <div className="h-full grow w-[calc(70%-3rem)] flex flex-col">
           <Image src={room} className="h-[calc(60%-1rem)] w-full" />
           <div className="py-6">
-            <h2 className="font-bold">A TV Room in Goteborg</h2>
+            <h2 className="font-bold">A TV Room in Göteborg</h2>
             <p>Corona render</p>
           </div>
         </div>
