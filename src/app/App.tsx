@@ -5,7 +5,7 @@ import Section4 from "@/pages/Section4/Section4";
 
 function App() {
   return (
-    <div className="snap-y snap-mandatory">
+    <div className="">
       <Section1 />
       <Section2 />
       <Section3 />
