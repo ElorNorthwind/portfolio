@@ -22,8 +22,13 @@ export default function Image(props: ImageProps) {
   }, []);
 
   return (
-    <div className={`z-1 ${className}`}>
-      <img src={src} alt={alt} className="object-cover  w-full h-full" onClick={onOpenModal} />
+    <div className={`z-1 overflow-hidden ${className}`}>
+      <img
+        src={src}
+        alt={alt}
+        className="object-cover hover:scale-105 duration-500 transition-transform w-full h-full cursor-pointer"
+        onClick={onOpenModal}
+      />
       <Modal isOpen={isModalOpen} onClose={onCloseModal} lazy>
         <Suspense fallback={<div>Loading...</div>}>
           <img src={src} alt={alt} className="max-h-[calc(100vh-3rem)] h-full w-full object-contain" />

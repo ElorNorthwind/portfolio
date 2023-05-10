@@ -7,7 +7,7 @@ export default function Section1() {
     <SectionWrapper>
       <div className="pt-5 h-full w-full flex">
         <div className="h-full flex flex-col grow">
-          <h1 className="z-2 top-1/2 left-6 text-white text-8xl absolute">portfolio.</h1>
+          <h1 className="z-10 top-1/2 left-6 text-white text-8xl absolute">portfolio.</h1>
           <Image src={mainview} className="w-full h-full max-h-[85%] grow" />
           {/* <img src={mainview} className="z-1 w-full h-full max-h-[85%] object-cover grow" /> */}
           <div className="flex place-content-between p-6 text-2xl">
