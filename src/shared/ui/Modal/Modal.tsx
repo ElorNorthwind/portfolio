@@ -27,7 +27,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
   }, [onClose]);
 
   const contentClickHandler = (e: React.MouseEvent): void => {
-    e.stopPropagation();
+    // e.stopPropagation();
   };
 
   const onKeydown = useCallback(
@@ -62,7 +62,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
         className={`bg-black flex align-middle justify-center bg-opacity-60 inset-0 ${isOpen ? "fixed" : "hidden"}`}
         onClick={closeHandler}
       >
-        <div className={`m-auto ${className}`} onClick={contentClickHandler}>
+        <div className={`my-auto mx-6 ${className}`} onClick={contentClickHandler}>
           {children}
         </div>
       </div>

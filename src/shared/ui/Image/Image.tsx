@@ -26,7 +26,7 @@ export default function Image(props: ImageProps) {
       <img src={src} alt={alt} className="object-cover  w-full h-full" onClick={onOpenModal} />
       <Modal isOpen={isModalOpen} onClose={onCloseModal} lazy>
         <Suspense fallback={<div>Loading...</div>}>
-          <img src={src} alt={alt} className="max-h-full p-4" />
+          <img src={src} alt={alt} className="max-h-full" />
         </Suspense>
       </Modal>
     </div>
