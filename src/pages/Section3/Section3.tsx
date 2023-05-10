@@ -1,12 +1,13 @@
 import SectionWrapper from "@/shared/ui/SectionWrapper/SectionWrapper";
 import visionSet from "@/shared/assets/images/Vinson_Set.jpg";
+import Image from "@/shared/ui/Image/Image";
 
 export default function Section3() {
   return (
     <SectionWrapper>
       <div className="h-full">
         <div className="py-8 h-5/6 flex flex-row gap-8">
-          <img src={visionSet} className="z-1 h-full w-full object-cover" />
+          <Image src={visionSet} className="h-full w-full" />
         </div>
         <div className="pl-8 pb-8">
           <h2 className="font-bold">A Living Room in Stockton</h2>
