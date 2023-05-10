@@ -48,10 +48,6 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
     };
   }, [isOpen, onKeydown]);
 
-  //   const mods: Mods = {
-  //     [cls.opened]: isOpen,
-  //   };
-
   if (lazy && !isMounted) {
     return null;
   }
