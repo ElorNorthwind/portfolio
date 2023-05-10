@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
   },
-  base: "https://portfolio-dzhh8sm5o-elornorthwind.vercel.app/",
+  base: "https://elornorthwind.github.io/portfolio/",
 });
 
 // https://portfolio-dzhh8sm5o-elornorthwind.vercel.app/
