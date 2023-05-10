@@ -8,6 +8,8 @@ interface SectionWrapperProps {
 export default function SectionWrapper(props: SectionWrapperProps) {
   const { children, className } = props;
   return (
-    <div className={`relative h-screen w-full bg-stone-200 text-slate-600 snap-start ${className}`}>{children}</div>
+    <div className={`relative h-screen w-full bg-stone-200 text-slate-600 snap-start snap-always ${className}`}>
+      {children}
+    </div>
   );
 }
