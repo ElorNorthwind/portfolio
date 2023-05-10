@@ -58,10 +58,12 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
   return (
     <Portal>
       <div
-        className={`bg-black flex align-middle justify-center bg-opacity-60 inset-0 ${isOpen ? "fixed" : "hidden"}`}
+        className={`bg-black flex align-middle justify-center bg-opacity-60 transition-all duration-500 inset-0 ${
+          isOpen ? "fixed" : "hidden"
+        }`}
         onClick={closeHandler}
       >
-        <div className={`my-auto mx-6 ${className}`} onClick={contentClickHandler}>
+        <div className={`my-auto  h-[90vh] w-[90vw] ${className}`} onClick={contentClickHandler}>
           {children}
         </div>
       </div>
