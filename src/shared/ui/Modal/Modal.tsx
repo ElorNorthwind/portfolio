@@ -1,6 +1,5 @@
 import React, { ReactNode, useCallback, useEffect, useState } from "react";
 import { Portal } from "../Portal/Portal";
-import cls from "./Modal.module.scss";
 
 interface ModalProps {
   className?: string;
@@ -63,7 +62,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
         className={`bg-black flex align-middle justify-center bg-opacity-60 inset-0 ${isOpen ? "fixed" : "hidden"}`}
         onClick={closeHandler}
       >
-        <div className={`m-auto`} onClick={contentClickHandler}>
+        <div className={`m-auto ${className}`} onClick={contentClickHandler}>
           {children}
         </div>
       </div>
