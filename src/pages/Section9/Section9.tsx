@@ -21,14 +21,9 @@ export default function Section9() {
               <p>Corona render, V-Ray render</p>
             </div>
             <Image src={future1} className="h-full w-full" />
+            Section9 copy{" "}
           </div>
         </div>
-
-        {/* <Image src={future1} className="min-h-1/2 w-full" />
-        <div className="">
-          <h2 className="font-bold">A Garage near Malmö</h2>
-          <p>Corona render, Forest Pack</p>
-        </div> */}
       </div>
     </SectionWrapper>
   );
