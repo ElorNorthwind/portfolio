@@ -58,7 +58,7 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
   return (
     <Portal>
       <div
-        className={`bg-black flex align-middle justify-center bg-opacity-60 transition-all duration-300 inset-0 fixed ${
+        className={`bg-black flex align-middle justify-center bg-opacity-80 transition-all duration-300 inset-0 fixed ${
           isOpen ? "opacity-100 z-[100]" : "opacity-0 -z-10"
         }`}
         onClick={closeHandler}

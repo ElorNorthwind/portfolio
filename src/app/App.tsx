@@ -1,5 +1,10 @@
 import Section1 from "@/pages/Section1/Section1";
 import Section10 from "@/pages/Section10/Section10";
+import Section11 from "@/pages/Section11/Section11";
+import Section12 from "@/pages/Section12/Section12";
+import Section13 from "@/pages/Section13/Section13";
+import Section14 from "@/pages/Section14/Section14";
+import Section15 from "@/pages/Section15/Section15";
 import Section2 from "@/pages/Section2/Section2";
 import Section3 from "@/pages/Section3/Section3";
 import Section4 from "@/pages/Section4/Section4";
@@ -22,6 +27,11 @@ function App() {
       <Section8 />
       <Section9 />
       <Section10 />
+      <Section11 />
+      <Section12 />
+      <Section13 />
+      <Section14 />
+      <Section15 />
     </div>
   );
 }

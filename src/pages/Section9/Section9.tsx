@@ -21,7 +21,6 @@ export default function Section9() {
               <p>Corona render, V-Ray render</p>
             </div>
             <Image src={future1} className="h-full w-full" />
-            Section9 copy{" "}
           </div>
         </div>
       </div>

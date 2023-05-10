@@ -20,13 +20,6 @@ export default function Section5() {
             <h2 className="font-bold">Carpet detail</h2>
           </div>
         </div>
-        {/* <div className="py-8 h-full flex flex-col gap-8 px-6">
-          <img src={room} className="z-1 h-full w-full object-cover" />
-        </div>
-        <div className="pl-8 pb-8">
-          <h2 className="font-bold">Residential Area near Skærbæk</h2>
-          <p>Corona render, Forest Pack, Rail Clone</p>
-        </div> */}
       </div>
     </SectionWrapper>
   );
