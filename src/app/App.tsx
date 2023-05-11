@@ -15,7 +15,7 @@ import Section8 from "@/pages/Section8/Section8";
 import Section9 from "@/pages/Section9/Section9";
 import SectionWrapper from "@/shared/ui/SectionWrapper/SectionWrapper";
 import Navbar from "@/widgets/Navbar/Navbar";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 function App() {
   const sections = [
@@ -36,6 +36,10 @@ function App() {
     <Section15 />,
   ];
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [refs, setRefs] = useState<(HTMLDivElement | null)[]>([]);
+  useEffect(() => {
+    setRefs(sectionRefs.current);
+  }, [sectionRefs]);
 
   return (
     <div id="wrapper" className="relative max-w-7xl mx-auto h-full bg-[#f7f7f0] shadow-2xl">
@@ -44,7 +48,7 @@ function App() {
           {section}
         </SectionWrapper>
       ))}
-      <Navbar refs={sectionRefs} />
+      <Navbar refs={refs} />
     </div>
   );
 }
