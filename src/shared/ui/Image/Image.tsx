@@ -67,32 +67,3 @@ export default function Image(props: ImageProps) {
     </div>
   );
 }
-// export function useInfiniteScroll({ callback, triggerRef, wrapperRef }: UseInfiniteScrollOptions) {
-//     useEffect(() => {
-//       let observer: IntersectionObserver | null = null;
-//       const wrapperElement = wrapperRef.current;
-//       const triggerElement = triggerRef.current;
-
-//       if (callback) {
-//         const options = {
-//           root: wrapperElement,
-//           rootMargin: "0px",
-//           threshold: 0,
-//         };
-
-//         observer = new IntersectionObserver(([entry]) => {
-//           if (entry.isIntersecting) {
-//             console.log("observed");
-//             callback();
-//           }
-//         }, options);
-
-//         observer.observe(triggerElement);
-//       }
-//       return () => {
-//         if (observer) {
-//           observer.unobserve(triggerElement);
-//         }
-//       };
-//     }, [callback, triggerRef, wrapperRef]);
-//   }

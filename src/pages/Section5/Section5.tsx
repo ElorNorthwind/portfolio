@@ -1,11 +1,10 @@
-import SectionWrapper from "@/shared/ui/SectionWrapper/SectionWrapper";
 import rug from "@/shared/assets/images/koghaug_rugHF.jpg";
 import room from "@/shared/assets/images/koghaug_tvroom_final.jpg";
 import Image from "@/shared/ui/Image/Image";
 
 export default function Section5() {
   return (
-    <SectionWrapper>
+    <>
       <div className="h-full flex gap-8 p-8">
         <div className="h-full grow w-[calc(70%-3rem)] flex flex-col">
           <Image src={room} className="h-[calc(60%-1rem)] w-full" />
@@ -21,8 +20,6 @@ export default function Section5() {
           </div>
         </div>
       </div>
-    </SectionWrapper>
+    </>
   );
 }
-
-// bg - [#d6d1ca];

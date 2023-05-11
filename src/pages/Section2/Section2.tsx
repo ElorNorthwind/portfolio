@@ -1,4 +1,3 @@
-import SectionWrapper from "@/shared/ui/SectionWrapper/SectionWrapper";
 import kitchen1 from "@/shared/assets/images/kitchen1.jpg";
 import kitchen2 from "@/shared/assets/images/kitchen2.jpg";
 import ColorBox from "@/shared/ui/ColorBox/ColorBox";
@@ -6,7 +5,7 @@ import Image from "@/shared/ui/Image/Image";
 
 export default function Section2() {
   return (
-    <SectionWrapper>
+    <>
       <div className="h-full">
         <div className="py-8 h-2/3 flex flex-row gap-8">
           <Image src={kitchen1} className="h-full w-[calc(70%-1rem)]" />
@@ -26,7 +25,7 @@ export default function Section2() {
           <ColorBox name="Jet" color="bg-[#363634]" black={false} />
         </div>
       </div>
-    </SectionWrapper>
+    </>
   );
 }
 

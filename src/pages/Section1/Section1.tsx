@@ -1,10 +1,9 @@
-import SectionWrapper from "@/shared/ui/SectionWrapper/SectionWrapper";
 import mainview from "@/shared/assets/images/mainview.jpg";
 import Image from "@/shared/ui/Image/Image";
 
 export default function Section1() {
   return (
-    <SectionWrapper>
+    <>
       <div className="pt-5 h-full w-full flex">
         <div className="h-full flex flex-col grow">
           <h1 className="z-10 top-1/2 left-6 text-white text-8xl absolute">portfolio.</h1>
@@ -26,6 +25,6 @@ export default function Section1() {
           <p>Corona Render, Forest pack</p>
         </div>
       </div>
-    </SectionWrapper>
+    </>
   );
 }
