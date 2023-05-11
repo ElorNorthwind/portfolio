@@ -1,5 +1,5 @@
 import { Suspense, useCallback, useState, useEffect, useRef } from "react";
-import { Modal } from "../Modal/Modal";
+import { Modal } from "@/shared/ui/Modal/Modal";
 
 interface ImageProps {
   src: string;
@@ -14,7 +14,6 @@ export default function Image(props: ImageProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onOpenModal = useCallback(() => {
-    console.log("ping");
     setIsModalOpen(true);
   }, []);
 
