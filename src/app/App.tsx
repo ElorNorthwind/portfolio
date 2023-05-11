@@ -16,7 +16,7 @@ import Section9 from "@/pages/Section9/Section9";
 
 function App() {
   return (
-    <div className="relative max-w-7xl mx-auto h-full bg-[#f7f7f0] shadow-2xl">
+    <div id="wrapper" className="relative max-w-7xl mx-auto h-full bg-[#f7f7f0] shadow-2xl">
       <Section1 />
       <Section2 />
       <Section3 />

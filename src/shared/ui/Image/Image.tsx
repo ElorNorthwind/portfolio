@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useState } from "react";
+import { Suspense, useCallback, useState, useEffect, useRef } from "react";
 import { Modal } from "../Modal/Modal";
 
 interface ImageProps {
@@ -9,7 +9,8 @@ interface ImageProps {
 
 export default function Image(props: ImageProps) {
   const { src, alt = "", className } = props;
-
+  const imgRef = useRef(null);
+  const [isShownd, setIsShown] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onOpenModal = useCallback(() => {
@@ -21,12 +22,41 @@ export default function Image(props: ImageProps) {
     setIsModalOpen(false);
   }, []);
 
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    const options = {
+      root: null, //document.querySelector("#wrapper"),
+      rootMargin: "0px",
+      threshold: 0.3,
+    };
+    const element = imgRef.current;
+
+    observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsShown(true);
+      }
+    }, options);
+
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (observer && element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
+
   return (
     <div className={`z-1 overflow-hidden ${className}`}>
       <img
         src={src}
         alt={alt}
-        className="object-cover hover:scale-105 duration-500 transition-transform w-full h-full cursor-pointer"
+        ref={imgRef}
+        className={`object-cover hover:scale-105 duration-500 transition-all w-full h-full cursor-pointer ${
+          isShownd ? "opacity-100" : "opacity-0"
+        }`}
         onClick={onOpenModal}
       />
       <Modal isOpen={isModalOpen} onClose={onCloseModal} lazy>
@@ -37,35 +67,32 @@ export default function Image(props: ImageProps) {
     </div>
   );
 }
+// export function useInfiniteScroll({ callback, triggerRef, wrapperRef }: UseInfiniteScrollOptions) {
+//     useEffect(() => {
+//       let observer: IntersectionObserver | null = null;
+//       const wrapperElement = wrapperRef.current;
+//       const triggerElement = triggerRef.current;
 
-// import { Suspense } from "react";
-// import { classNames } from "shared/lib/classNames/classNames";
-// import { Loader } from "shared/ui/Loader/Loader";
-// import { Modal } from "shared/ui/Modal/Modal";
-// import { LoginFormAsync } from "../LoginForm/LoginForm.async";
-// import cls from "./LoginModal.module.scss";
+//       if (callback) {
+//         const options = {
+//           root: wrapperElement,
+//           rootMargin: "0px",
+//           threshold: 0,
+//         };
 
-// interface LoginModalProps {
-//   className?: string;
-//   isOpen: boolean;
-//   onClose: () => void;
-// }
+//         observer = new IntersectionObserver(([entry]) => {
+//           if (entry.isIntersecting) {
+//             console.log("observed");
+//             callback();
+//           }
+//         }, options);
 
-// export const LoginModal: React.FC<LoginModalProps> = (
-//   props: LoginModalProps
-// ) => {
-//   const { className, isOpen, onClose } = props;
-
-//   return (
-//     <Modal
-//       className={classNames(cls.loginModal, {}, [className])}
-//       isOpen={isOpen}
-//       onClose={onClose}
-//       lazy
-//     >
-//       <Suspense fallback={<Loader />}>
-//         <LoginFormAsync onSuccess={onClose} />
-//       </Suspense>
-//     </Modal>
-//   );
-// };
+//         observer.observe(triggerElement);
+//       }
+//       return () => {
+//         if (observer) {
+//           observer.unobserve(triggerElement);
+//         }
+//       };
+//     }, [callback, triggerRef, wrapperRef]);
+//   }
