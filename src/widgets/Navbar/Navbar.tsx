@@ -10,7 +10,7 @@ export default function Navbar(props: NavbarProps) {
       {refs.length > 0 &&
         refs.map((ref, id) => (
           <div
-            className={`rotate-45  bg-opacity-20 h-3 w-3 cursor-pointer hover:bg-opacity-30 ${
+            className={`rotate-45  bg-opacity-20 h-3 w-3 cursor-pointer hover:bg-opacity-30 transition-colors duration-200 ${
               id === active ? "bg-black" : "bg-stone-500"
             }`}
             onClick={() => ref?.scrollIntoView({ behavior: "smooth" })}
