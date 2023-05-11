@@ -37,6 +37,8 @@ function App() {
   ];
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [refs, setRefs] = useState<(HTMLDivElement | null)[]>([]);
+  const [current, setCurrent] = useState<React.Key | null | undefined>(0);
+
   useEffect(() => {
     setRefs(sectionRefs.current);
   }, [sectionRefs]);
@@ -44,11 +46,15 @@ function App() {
   return (
     <div id="wrapper" className="relative max-w-7xl mx-auto h-full bg-[#f7f7f0] shadow-2xl">
       {sections.map((section, id) => (
-        <SectionWrapper key={id} ref={(el: HTMLDivElement) => (sectionRefs.current[id] = el)}>
+        <SectionWrapper
+          key={id}
+          ref={(el: HTMLDivElement) => (sectionRefs.current[id] = el)}
+          onObserved={() => setCurrent(id)}
+        >
           {section}
         </SectionWrapper>
       ))}
-      <Navbar refs={refs} />
+      <Navbar refs={refs} active={current} />
     </div>
   );
 }
